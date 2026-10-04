@@ -1,0 +1,33 @@
+@prefix : <http://archive.istu.ru/ns/uncertainty#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+:FuzzyDateTimeDescription a owl:Class ;
+    rdfs:label "Fuzzy date-time description"@en ;
+    rdfs:comment "A date-time description that is uncertain and for which a confidence interval is given"@en ;
+    rdfs:subClassOf time:DateTimeDescription ;
+    rdfs:subClassOf [ a owl:Class ;
+                      owl:unionOf ( [ a owl:Resitrction ;
+                                      owl:onProperty :before ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ]
+                                    [ a owl:Resitrction ;
+                                      owl:onProperty :after ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ]
+                                  )
+                    ] .
+
+:before a owl:DatatypeProperty ;
+    rdfs:label "before"@en ;
+    rdfs:comment "In case of a fuzzy date, how many precision units before the given time it could be"@en ;
+    rdfs:domain :FuzzyDateTimeDescription ;
+    rdfs:range xsd:nonNegativeInteger .
+
+:after a owl:DatatypeProperty ;
+    rdfs:label "after"@en ;
+    rdfs:comment "In case of a fuzzy date, how many precision units after the given time it could be"@en ;
+    rdfs:domain :FuzzyDateTimeDescription ;
+    rdfs:range xsd:nonNegativeInteger .

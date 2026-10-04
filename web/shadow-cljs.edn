@@ -1,0 +1,15 @@
+{:deps true
+
+ :builds
+ {:main
+  {:target :node-script
+   :main istu.archive.server/main
+   :output-to "build/index.js"
+   :js-options
+   {:resolve {"qs" {:target :file
+                    :file   "src/qs.js"}}}}
+
+  :tools
+  {:target :node-script
+   :main istu.archive.tools/main
+   :output-to "build/tools.js"}}}

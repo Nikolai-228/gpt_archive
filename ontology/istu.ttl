@@ -1,0 +1,222 @@
+@prefix : <http://archive.istu.ru/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix geom: <http://archive.istu.ru/ns/geom#> .
+@prefix schema: <http://schema.org/> .
+@prefix hint:   <http://archive.istu.ru/ns/hint#>
+
+:patronymicName a owl:DatatypeProperty ;
+    rdfs:label "patronymic name"@en , "отчество"@ru ;
+    rdfs:comment "часть имени человека, присваиваемая ребёнку по имени отца"@ru ;
+    skos:altLabel "патроним"@ru ;
+    rdfs:domain schema:Person ;
+    rdfs:range xsd:string ;
+.
+:birthDate a owl:ObjectProperty ;
+    rdfs:label "birth date"@en , "дата рождения"@ru ;
+    rdfs:comment "дата, когда человек родился"@ru ;
+    skos:altLabel "день рождения"@ru , "родился"@ru ;
+    rdfs:domain schema:Person ;
+    rdfs:range time:Instant ;
+.
+:deathDate a owl:ObjectProperty ;
+    rdfs:label "death date"@en , "дата смерти"@ru ;
+    rdfs:comment "дата, когда человек умер"@ru ;
+    skos:altLabel "умер"@ru ;
+    rdfs:domain schema:Person ;
+    rdfs:range time:Instant ;
+.
+:whenHappened a owl:ObjectProperty ;
+    rdfs:label "date of the event"@en , "дата события"@ru ;
+    rdfs:comment "дата или временной период, когда данное событие произошло"@ru ;
+    rdfs:domain schema:Event ;
+    rdfs:range time:TemporalEntity ;
+.
+:country a owl:ObjectProperty ;
+    rdfs:label "country"@en , "страна"@ru ;
+    rdfs:comment "страна (государство) размещения или регистрации субъекта"@ru ;
+    rdfs:domain schema:Organization ;
+    rdfs:range schema:Country ;
+.
+:academicDegree a owl:ObjectProperty ;
+    rdfs:label "academic degree"@en , "учёная степень"@ru ;
+    rdfs:comment "учёная степень, присуждённая субъекту"@ru ;
+    rdfs:domain schema:Person ;
+    rdfs:range :AcademicDegree ;
+.
+:AcademicDegree a owl:Class ;
+    rdfs:label "academic degree"@en , "учёная степень"@ru ;
+    rdfs:comment "статус, присваиваемый человеку за освоение определённой ступени образования либо за исследовательскую деятельность"@ru ;
+    rdfs:subClassOf skos:Concept ;
+.
+:academicRank a owl:ObjectProperty ;
+    rdfs:label "academic rank"@en , "учёное звание"@ru ;
+    rdfs:comment "учёное звание, присуждённую человеку. Не обязательно соотносится с занимаемой должностью в научном учреждении (например, в случае России)."@ru ;
+    rdfs:domain schema:Person ;
+    rdfs:range :AcademicRank ;
+.
+:AcademicRank a owl:Class ;
+    rdfs:label "academic rank"@en , "учёное звание"@ru ;
+    rdfs:comment "ступень квалификационной системы в высших учебных заведениях и научных организациях"@ru ;
+    rdfs:subClassOf skos:Concept ;
+.
+:dateCreated a owl:ObjectProperty ;
+    rdfs:label "date created"@en , "дата создания"@ru ;
+    rdfs:comment "the date when the work was created"@en , "дата, когда данное произведение было создано"@ru ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range time:Instant ;
+.
+:hasDepiction a owl:ObjectProperty ;
+    rdfs:label "has depiction"@en , "изображено"@ru ;
+    rdfs:domain schema:Photograph ;
+    rdfs:range :Depiction ;
+.
+:Depiction a owl:Class ;
+    rdfs:label "Depiction of an object on a photo"@en , "Изображение объекта на фотографии"@ru ;
+    rdfs:subClassOf [ a owl:Restriction ;
+                      owl:onProperty :depictedObject ;
+                      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                    ] ,
+                    [ a owl:Restriction ;
+                      owl:onProperty :depictedAsRole ;
+                      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                    ] ,
+                    [ a owl:Restriction ;
+                      owl:onProperty :depictedArea ;
+                      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                    ] ;
+.
+:depictedObject a owl:ObjectProperty ;
+    rdfs:label "object"@en , "объект"@ru ;
+    rdfs:domain :Depiction ;
+.
+:depictedAsRole a owl:ObjectProperty ;
+    rdfs:label "role"@en , "роль"@ru ;
+    rdfs:domain :Depiction ;
+    rdfs:range :DepictedRole ;
+.
+:DepictedRole a owl:Class .
+:Guest a :DepictedRole ;
+    rdfs:label "guest"@en , "гость"@ru ;
+.
+:depictedArea a owl:DatatypeProperty ;
+    rdfs:label "area"@en , "область"@ru ;
+    rdfs:domain :Depiction ;
+    rdfs:range geom:shape ;
+.
+:chromaticity a owl:ObjectProperty
+    ; rdfs:label "chromaticity"@en , "цветность"@ru
+    ; rdfs:comment "цветность изображения (например, цветное или чёрно-белое изображение)"@ru
+    ; rdfs:domain schema:Photograph
+    ; rdfs:range :ChromaticityType
+    ; hint:showInitialSuggestions true
+    .
+:ChromaticityType a owl:Class ;
+    rdfs:label "chromaticity type"@en , "тип цветности"@ru .
+:Chromatic a :ChromaticityType ;
+    rdfs:label "chromatic image"@en , "цветное изображение"@ru .
+:Achromatic a :ChromaticityType ;
+    rdfs:label "black and white image"@en , "чёрно-белое изображение"@ru .
+
+:Genre a owl:Class
+    ; rdfs:label "genre"@en , "жанр"@ru
+    ; rdfs:comment "категория произведений на основе формы, темы или техники"@ru
+    ; rdfs:subClassOf skos:Concept
+    .
+:Faculty a owl:Class
+    ; rdfs:label "faculty"@en , "факультет или институт"@ru
+    ; rdfs:comment "наиболее крупное подразделение университета"@ru
+    ; rdfs:subClassOf schema:EducationalOrganization
+    ; owl:equivalentClass <http://www.wikidata.org/entity/Q180958>
+    .
+:AcademicDepartment a owl:Class
+    ; rdfs:label "academic department"@en , "кафедра"@ru
+    ; rdfs:comment "структурное подразделение высшего учебного заведения, обычно часть факультета"@ru
+    ; rdfs:subClassOf schema:EducationalOrganization
+    ; owl:equivalentClass <http://www.wikidata.org/entity/Q2467461>
+    .
+:Building a owl:Class
+    ; rdfs:label "building"@en , "здание"@ru
+    ; rdfs:comment "строение, обычно имеющее стены и крышу"@ru
+    ; rdfs:subClassOf schema:Place
+    ; owl:equivalentClass <http://www.wikidata.org/entity/Q41176>
+    .
+:UniversityBuilding a owl:Class
+    ; rdfs:label "university building"@en , "здание университета"@ru
+    ; rdfs:comment "здание (корпус), используемое высшим учебным заведением"@ru
+    ; skos:altLabel "корпус университета"@ru
+    ; rdfs:subClassOf :Building
+    ; owl:equivalentClass <http://www.wikidata.org/entity/Q19844914>
+    .
+:occupant a owl:ObjectProperty
+    ; rdfs:label "occupant"@en , "занимает"@ru
+    ; rdfs:comment "личность или организация, занимающая данное здание"@ru
+    ; skos:altLabel "обитатель"@ru , "занято"@ru
+    ; rdfs:domain :Building
+    ; rdfs:range [ a owl:Class ; owl:unionOf ( schema:Person schema:Organization ) ]
+    ; owl:equivalentProperty <http://www.wikidata.org/prop/P466>
+    .
+
+:note a owl:DatatypeProperty
+    ; rdfs:label "note"@en , "примечание"@ru
+    ; rdfs:comment "дополнительный текст, описывающий элемент. Информация, которую можно указать с помощью других свойств, должна быть представлена с помощью этих свойств"@ru
+    ; skos:altLabel "комментарий"@ru , "дополнительно"@ru
+    ; rdfs:range xsd:string
+    .
+
+:participant a owl:ObjectProperty
+    ; rdfs:label "participant"@en , "участник"@ru
+    ; rdfs:comment "мероприятие, в котором данная личность или организация участвовала"@ru
+    ; skos:altLabel "participated in"@en , "участвовал"@ru , "участвовала"@ru , "принимал участие"@ru , "принимала участие"@ru
+    ; rdfs:domain [ a owl:Class
+                  ; owl:unionOf ( schema:Person schema:Organization )
+                  ]
+    ; rdfs:range schema:Event
+    ; owl:equivalentProperty <http://www.wikidata.org/prop/P1344>
+    .
+:MilitaryConflict a owl:Class
+    ; rdfs:label "military conflict"@en , "военный конфликт"@ru
+    ; skos:altLabel "war"@en , "armed conflict"@en , "война"@ru
+    ; rdfs:subClassOf schema:Event
+    ; owl:equivalentClass <http://www.wikidata.org/entity/Q350604>
+    .
+:partOf a owl:ObjectProperty
+    ; rdfs:label "part of"@en , "является частью"@ru
+    ; rdfs:comment "объект или явление, непосредственной частью которого является данный элемент"@ru
+    ; skos:altLabel "часть"@ru
+    ; owl:equivalentProperty <http://www.wikidata.org/entity/P361>
+    .
+:Award a owl:Class
+    ; rdfs:label "award"@en , "награда"@ru
+    ; rdfs:comment "что-либо, выдаваемое в качестве поощрения за заслуги, отличия, в знак благодарности"@ru
+    ; skos:altLabel "премия"@ru , "медаль"@ru
+    ; owl:equivalentProperty <http://www.wikidata.org/entity/Q618779>
+    .
+:HonoraryTitle a owl:Class
+    ; rdfs:label "honorary title"@en , "почётное звание"@ru
+    ; rdfs:comment "звание, присваемое как награда"@ru
+    ; skos:altLabel "титул"@ru
+    ; rdfs:subClassOf :Award
+    ; owl:equivalentClass <http://www.wikidata.org/entity/Q3320743>
+    .
+:awardReceived a owl:ObjectProperty
+    ; rdfs:label "award received"@en , "полученные награды"@ru
+    ; rdfs:comment "награды, полученные персоной или организацией"@ru
+    ; skos:altLabel "звания"@ru , "ордена"@ru , "премии"@ru
+    ; rdfs:domain [ a owl:Class
+                  ; owl:unionOf ( schema:Person schema:Organization )
+                  ]
+    ; rdfs:range :Award
+    ; owl:equivalentProperty <http://www.wikidata.org/prop/P166>
+    .
+:Monument a owl:Class
+    ; rdfs:label "monument"@en , "памятник"@ru
+    ; rdfs:comment "сооружение, созданное для сохранения памяти о некотором человеке или событии"@ru
+    ; skos:altLabel "memorial"@en
+    ; rdfs:subClassOf schema:CreativeWork
+                    , schema:Place
+    ; owl:equivalentClass <http://www.wikidata.org/entity/Q4989906>
+    .

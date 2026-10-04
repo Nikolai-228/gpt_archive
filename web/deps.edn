@@ -1,0 +1,16 @@
+{:paths ["src"]
+
+ :deps
+ {com.cognitect/transit-cljs {:mvn/version "0.8.280"}
+  com.taoensso/telemere      {:mvn/version "1.0.0-beta16"}
+  funcool/promesa            {:mvn/version "10.0.594"} ; pin
+  macchiato/env              {:mvn/version "0.0.6"}
+  macchiato/core             {:mvn/version "0.2.24"}
+  macchiato/hiccups          {:mvn/version "0.4.1"}
+  metosin/reitit-core        {:mvn/version "0.7.1"}
+  metosin/reitit-ring        {:mvn/version "0.7.1"}
+  mount/mount                {:mvn/version "0.1.19"}
+  nano-id/nano-id            {:mvn/version "1.1.0"}
+  org.clojure/core.match     {:mvn/version "1.1.0"}
+  ru.istu/archive-common     {:local/root "../common"}
+  thheller/shadow-cljs       {:mvn/version "2.28.12"}}}

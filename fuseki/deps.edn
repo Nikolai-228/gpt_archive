@@ -1,0 +1,18 @@
+{:paths ["src" "resources" "build/classes"]
+
+ :deps
+ {com.cognitect/transit-clj             {:mvn/version "1.0.333"}
+  nano-id/nano-id                       {:mvn/version "1.1.0"}
+  org.ring-clojure/ring-jakarta-servlet {:mvn/version "1.12.2"}
+  ru.istu/archive-common                {:local/root "../common"}}
+
+ :aliases
+ {:compile
+  {:extra-deps
+   {org.apache.jena/jena-fuseki-main {:mvn/version "5.2.0"}}}
+
+  :build
+  {:deps
+   {io.github.clojure/tools.build {:git/tag "v0.10.5"
+                                   :git/sha "2a21b7a"}}
+   :ns-default build}}}

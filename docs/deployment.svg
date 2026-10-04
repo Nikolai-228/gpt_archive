@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg194" width="844.1" height="650.7" version="1.1" viewBox="0 0 844 651">
+  <style>
+    text{
+      font-size:13.3333px;
+      line-height:1;
+      font-family: 'Noto Sans', sans-serif;
+      text-align:center
+    }
+    .uml-header{
+      text-anchor:middle
+    }
+    .name{
+      font-weight:600
+    }
+    .multiplicity{
+      text-align:left
+    }
+    .box{
+      fill:none;
+      stroke:#000;
+      stroke-width:2
+    }
+    .connector {
+      fill: white;
+    }
+    .arrow {
+      stroke:#000;
+      stroke-width:2;
+      stroke-dasharray:5,2;
+      stroke-dashoffset:0;
+      marker-end:url(#ArrowWide);
+    }
+    .icon {
+      fill: none;
+      stroke: black;
+      stroke-width: 1.2;
+    }
+  </style>
+  <defs id="defs63">
+    <path id="rect72" d="M69 452h103v19H69z"/>
+    <path id="rect2" d="M341 118h208v94H341z"/>
+    <path id="rect2-0" d="M341 118h129v40H341z"/>
+    <marker id="ArrowWide" markerHeight="1" markerWidth="1" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" refX="0" refY="0" style="overflow:visible" viewBox="0 0 1 1">
+      <path id="path203" d="M3-3 0 0l3 3" style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt" transform="rotate(180 0 0)"/>
+    </marker>
+  </defs>
+  <g id="g204" transform="translate(17 58)">
+    <path id="path147" fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" stroke-width="2" d="M185 455h158v137H185Zm0 0 10-10h158v137l-10 10m0-137 10-10"/>
+    <g id="g205" transform="translate(-317 81)">
+      <path id="path147-3" fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" stroke-width="2" d="M516 430h119v65H516Zm0 0 10-10h119v65l-10 10m0-65 10-10"/>
+      <text xml:space="preserve" id="text194-7-9-1-1" x="575" y="448" class="uml-header"><tspan id="tspan194-5-1-7-7" x="575" y="448">«browser»</tspan><tspan id="tspan2-27-8" x="575" y="462" class="name">Веб-браузер</tspan></text>
+      <text xml:space="preserve" id="text72" transform="translate(457 18)"><tspan id="tspan3" x="69" y="464">web/scripts/*.js</tspan></text>
+    </g>
+    <text xml:space="preserve" id="text194-7-9-1-5" x="267" y="474" class="uml-header"><tspan id="tspan194-5-1-7-9" x="267" y="474">«device»</tspan><tspan id="tspan2-27-6" x="267" y="488" class="name">ЭВМ пользователя</tspan></text>
+  </g>
+  <text xml:space="preserve" id="text199-84" x="295" y="447" class="multiplicity">1</text>
+  <text xml:space="preserve" id="text199-3" x="295" y="497" class="multiplicity">*</text>
+  <path id="path204" d="M291 432v70" style="stroke:#000;stroke-width:1.7"/>
+  <text xml:space="preserve" id="text204" x="222" y="481"><tspan id="tspan204" x="222" y="481" class="uml-header">«протокол» HTTPS</tspan></text>
+  <g id="g72" transform="translate(-582 -46)">
+    <path id="path64" d="M583 57h832v448H583Zm0 0 10-10h832v448l-10 10m0-448 10-10" class="box"/>
+    <g id="g199" transform="translate(691 -8)">
+      <path id="path118" d="M-16 0h265v276H-16Zm0 0 10-10h265v276l-10 10m0-276 10-10" class="box" transform="translate(443 210)"/>
+      <g id="g200-9" transform="translate(296 78)">
+        <path id="path101-7" d="M148 248h228v52H148Z" class="box" style="stroke-width:1.7"/>
+        <use xlink:href="#path102" id="use1" x="0" y="0" transform="translate(36)"/>
+        <g id="g195-6-2-2-6" transform="translate(-79 113)">
+          <g id="g196-0-1" transform="translate(26 7)">
+            <text xml:space="preserve" id="text194-7-9-2-2" x="303" y="152" class="uml-header"><tspan id="tspan194-5-1-3-93" x="333" y="152">«artifact»</tspan>
+              <tspan id="tspan195-5-7-5-9" x="303" y="166" class="name">istu-archive-…-standalone.jar</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g id="g200-9-0" transform="translate(294 166)">
+        <path id="path101-7-6" fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.9" d="M179 248h169v52H179z"/>
+        <path id="rect65-9" d="M175 268h11v11h-11z" class="box connector"/>
+        <g id="g195-6-2-2-6-5" transform="translate(-79 113)">
+          <g id="g196-0-1-9" transform="translate(26 7)">
+            <text xml:space="preserve" id="text194-7-9-2-2-4" x="303" y="152" class="uml-header">«component»</text>
+            <text xml:space="preserve" id="text195-3-2-7-1-0" x="303" y="166" class="uml-header name">istu.archive.fuseki</text>
+          </g>
+        </g>
+        <use xlink:href="#rect6-7-5" id="use2" x="0" y="0"/>
+        <circle id="path68" cx="79.9" cy="273.8" r="6.7" class="box"/>
+        <path id="path69" d="M175 274H87" class="box"/>
+      </g>
+      <g id="g195-6-2" transform="translate(213 78)">
+        <text xml:space="preserve" id="text194-7-9" x="347" y="154" class="uml-header">
+          <tspan id="tspan194-5-1" x="347" y="154">«triplestore»</tspan>
+          <tspan id="tspan2" x="347" y="168" class="name">Apache Jena Fuseki 5.2.0</tspan>
+        </text>
+      </g>
+      <text xml:space="preserve" id="text2" x="-4" y="0" transform="translate(112 141)"><tspan id="tspan6" x="341" y="128"><tspan id="tspan5">ontology/*.ttl
+</tspan></tspan><tspan id="tspan18" x="341" y="141"><tspan id="tspan17">http://www.w3.org/2007/07/owl
+</tspan></tspan><tspan id="tspan20" x="341" y="155"><tspan id="tspan19">http://www.w3.org/ns/org
+</tspan></tspan><tspan id="tspan22" x="341" y="168"><tspan id="tspan21">schemaorg-current-http.ttl</tspan></tspan></text>
+      <path id="path65" d="M558 378v36" class="arrow"/>
+      <text xml:space="preserve" id="text65" x="569" y="400"><tspan id="tspan65" x="569" y="400">«manifest»</tspan></text>
+    </g>
+    <g id="g199-8" transform="translate(379 -93)">
+      <path class="box" d="M-16 0h161v88H-16Zm0 0 10-10h161v88l-10 10m0-88 10-10" transform="translate(443 210)"/>
+      <g id="g195-6-2-7" transform="translate(161 81)">
+        <text xml:space="preserve" class="uml-header" id="text194-7-9-1" x="347" y="154"><tspan id="tspan194-5-1-7" x="347" y="154">«database system»</tspan><tspan id="tspan2-27" x="347" y="168" class="name">PostgreSQL</tspan></text>
+      </g>
+      <text xml:space="preserve" id="text2-2" x="-4" y="0" transform="translate(117 147)"><tspan id="tspan24" x="341" y="128"><tspan id="tspan23">migrations/*.sql</tspan></tspan></text>
+    </g>
+    <g id="g201" transform="translate(120 565)">
+      <path id="path90" class="box" d="M491-307h383v220H491Zm0 0 10-10h383v220l-10 10m0-220 10-10"/>
+      <g id="g195-6" transform="translate(370 -434)">
+        <text xml:space="preserve" id="text194-7" x="317" y="148" class="uml-header"><tspan id="tspan194-5" x="317" y="148">«vm» <tspan id="tspan1" class="name">Node.js 20</tspan></tspan></text>
+      </g>
+      <g id="g200" transform="translate(504 -495)">
+        <path id="path101" class="box" d="M183 248h157v52H183Z"/>
+        <path id="path102" class="icon" d="M325 257v5h5l-5-5h-10v20h15v-15"/>
+        <g id="g195-6-2-2" transform="translate(-79 113)">
+          <g id="g196-0" transform="translate(26 7)">
+            <text xml:space="preserve" id="text194-7-9-2" x="303" y="152" class="uml-header"><tspan id="tspan194-5-1-3" x="303" y="152">«artifact»</tspan></text>
+            <text xml:space="preserve" id="text195-3-2-7" x="303" y="166" class="uml-header name"><tspan id="tspan195-5-7-5" x="303" y="166">web/build/index.js</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g id="g200-9-0-8" transform="translate(502 -407)">
+        <path id="path101-7-6-8" class="box" d="M179 248h169v52H179z"/>
+        <g id="g195-6-2-2-6-5-5" transform="translate(-79 113)">
+          <g id="g196-0-1-9-0" transform="translate(26 7)">
+            <text xml:space="preserve" id="text194-7-9-2-2-4-9" x="303" y="152" class="uml-header"><tspan id="tspan194-5-1-3-93-9-6" x="303" y="152">«component»</tspan></text>
+            <text xml:space="preserve" id="text195-3-2-7-1-0-3" x="303" y="166" class="uml-header"><tspan id="tspan195-5-7-5-9-9-8" x="303" y="166" class="name">istu.archive.web</tspan></text>
+          </g>
+        </g>
+        <path id="rect6-7-5" d="M315 267h8v4h-8zm0-7h8v4h-8zm4 0v-3h17v17h-17v-3m0-4v-3" class="icon"/>
+        <path id="rect65" d="M343 268h11v11h-11z" class="box connector"/>
+        <path id="path66" d="M354 274h78" class="box"/>
+        <path id="path67" d="M443 285q-10-1-11-11 1-10 11-11" class="box"/>
+      </g>
+      <path id="path65-6" d="M765-195v36" class="arrow"/>
+      <text xml:space="preserve" id="text65-1" x="776" y="-173"><tspan id="tspan65-1" x="776" y="-173">«manifest»</tspan></text>
+      <g id="g202" transform="translate(332 -592)">
+        <path id="rect201" d="M173 329h143v38H173z" class="box"/>
+        <path id="rect201-1" d="M173 367h143v40H173z" class="box"/>
+        <g id="g195-6-2-2-2" transform="translate(-92 186)">
+          <g id="g196-0-2" transform="translate(30 7)">
+            <text xml:space="preserve" id="text194-7-9-2-8" x="303" y="152" class="uml-header"><tspan id="tspan194-5-1-3-9" x="303" y="152">«deployment spec»</tspan></text>
+            <text xml:space="preserve" id="text195-3-2-7-7" x="303" y="166" class="uml-header"><tspan id="tspan195-5-7-5-3" x="303" y="166" class="name">web/config.edn</tspan></text>
+          </g>
+        </g>
+        <text xml:space="preserve" id="text71" x="178" y="382"><tspan id="tspan71" x="178" y="382" style="line-height:1.2">sparql-endpoint: URI</tspan><tspan id="tspan72" x="178" y="398" style="line-height:1.2">forest-endpoint: URI</tspan></text>
+      </g>
+      <path id="path65-9" d="M648-221h39" class="arrow"/>
+      <text xml:space="preserve" id="text69" x="923" y="-155"><tspan id="tspan69" x="923" y="-155">IForest</tspan></text>
+    </g>
+    <g id="g195-6-7" transform="translate(692 -66)">
+      <text xml:space="preserve" id="text194-7-8" x="312" y="148" class="uml-header"><tspan id="tspan194-5-4" x="312" y="148">«device» <tspan id="tspan4" class="name">Сервер Ubuntu 24.04</tspan></tspan></text>
+    </g>
+    <g id="g205-3" transform="translate(663 -345)">
+      <path id="path147-3-6" class="box" d="M516 430h131v59H516Zm0 0 10-10h131v59l-10 10m0-59 10-10"/>
+      <g id="g195-6-2-1" transform="translate(229 302)">
+        <text xml:space="preserve" id="text194-7-9-4" x="351" y="156" class="uml-header">
+          <tspan id="tspan194-5-1-9" x="365" y="156">«text index»</tspan>
+          <tspan id="tspan2-2" x="365" y="169" class="name">Apache Lucene</tspan>
+        </text>
+      </g>
+    </g>
+    <path id="path70" d="M1245 145v47" class="box"/>
+    <text xml:space="preserve" id="text70" x="1252" y="161"><tspan id="tspan70" x="1252" y="161">1</tspan></text>
+    <text xml:space="preserve" id="text70-8" x="1251" y="186"><tspan id="tspan70-1" x="1251" y="186">1</tspan></text>
+    <path id="path70-4" d="M888 204v44" class="box"/>
+    <text xml:space="preserve" id="text70-4" x="895" y="221"><tspan id="tspan70-4" x="895" y="221">1</tspan></text>
+    <text xml:space="preserve" id="text70-8-7" x="895" y="242"><tspan id="tspan70-1-6" x="895" y="242">1</tspan></text>
+  </g>
+  <g id="g202-7" transform="translate(261 175)">
+    <path id="rect201-4" d="M173 329h370v38H173z" class="box"/>
+    <path id="rect201-1-1" d="M173 367h370v88H173z" class="box"/>
+    <g id="g195-6-2-2-2-8" transform="translate(19 187)">
+      <g id="g196-0-2-5" transform="translate(30 7)">
+        <text xml:space="preserve" id="text194-7-9-2-8-9" x="308" y="153" class="uml-header">
+          <tspan id="tspan194-5-1-3-9-7" x="308" y="153">«interface»</tspan>
+          <tspan class="name" id="tspan74" x="308" y="167">IForest</tspan>
+        </text>
+      </g>
+    </g>
+    <text xml:space="preserve" id="text71-8" x="178" y="382"><tspan id="tspan72-3" x="178" y="382" style="line-height:1.2">+ get-entity(id: IRI): Tree {query}</tspan><tspan id="tspan75" x="178" y="398" style="line-height:1.2">+ create-entity(tree: Tree): Diff</tspan><tspan id="tspan76" x="178" y="414" style="line-height:1.2">+ delete-entity(iri: IRI): Diff</tspan><tspan id="tspan77" x="178" y="430" style="line-height:1.2">+ add-stmt(subject: IRI, predicate: IRI, object: Object): Diff</tspan><tspan id="tspan78" x="178" y="446" style="line-height:1.2">+ delete-stmt(subject: IRI, predicate: IRI, object: IRI): Diff</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+[{:title "Все фото"
+  :query "SELECT ?photo
+WHERE {
+  ?photo a schema:Photograph .
+}"}
+ {:title "Ректоры"
+  :query "SELECT ?photo GROUP_CONCAT(?name; SEPARATOR=\", \")
+WHERE {
+  ?photo a schema:Photograph ;
+         ia:hasDepiction/ia:depictedObject ?person .
+  ?person a schema:Person ;
+          schema:name ?name ;
+          org:hasMembership/org:role iao:rabywcwvgz4faval .
+}
+GROUP BY ?photo"}
+ {:title "Международное сотрудничество"
+  :query "SELECT ?photo GROUP_CONCAT(DISTINCT ?name1; SEPARATOR=\", \")
+WHERE {
+  ?photo a schema:Photograph ;
+         ia:hasDepiction/ia:depictedObject ?person1 , ?person2 .
+  ?person1 org:hasMembership/org:organization/schema:parentOrganization*/ia:country ?country1 .
+  ?person2 org:hasMembership/org:organization/schema:parentOrganization*/ia:country ?country2 .
+  FILTER (?country1 != ?country2)
+  OPTIONAL {
+    ?country1 schema:name ?name1 .
+    FILTER (LANG(?name1) = \"ru\")
+  }
+}
+GROUP BY ?photo"}
+ {:title "Главы РФ (Викиданные)"
+  :query "PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+SELECT ?photo ?name {
+  ?photo a schema:Photograph ;
+         ia:hasDepiction/ia:depictedObject ?person .
+  ?person owl:sameAs? ?wd .
+  FILTER (STRSTARTS(STR(?wd), STR(wd:)))
+  SERVICE <https://query.wikidata.org/sparql> {
+    wd:Q159 wdt:P35 ?wd .
+    OPTIONAL {
+      ?wd rdfs:label ?name .
+      FILTER (LANG(?name) = \"ru\")
+    }
+  }
+}"}]

@@ -1,0 +1,37 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#>
+@prefix owl:    <http://www.w3.org/2002/07/owl#>
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#>
+@prefix time:   <http://www.w3.org/2006/time#>
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>
+@prefix org:    <http://www.w3.org/ns/org#>
+@prefix schema: <http://schema.org/>
+@prefix ia:     <http://archive.istu.ru/ns#>
+@prefix hint:   <http://archive.istu.ru/ns/hint#>
+
+schema:Photograph owl:equivalentClass foaf:Image .
+
+schema:address hint:preferredRange xsd:string .
+schema:gender hint:preferredRange schema:GenderType
+    ; hint:showInitialSuggestions true
+    .
+schema:genre hint:preferredRange ia:Genre
+    ; hint:showInitialSuggestions true
+    .
+schema:geo hint:allowArbitraryIRI true .
+
+skos:exactMatch a rdf:Property
+    ; rdfs:domain skos:Concept
+    .
+skos:closeMatch a rdf:Property
+    ; rdfs:domain skos:Concept
+    .
+skos:broader a rdf:Property
+    ; rdfs:domain skos:Concept
+    ; rdfs:range skos:Concept
+    .
+
+owl:sameAs hint:allowArbitraryIRI true .
+
+org:memberDuring hint:preferredRange time:Interval .

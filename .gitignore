@@ -1,0 +1,11 @@
+**/build/
+
+# Clojure
+.nrepl-port
+.cache
+.cpcache
+*.jar
+
+# Shadow CLJS
+**/.shadow-cljs
+**/node_modules/

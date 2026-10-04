@@ -1,0 +1,178 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+
+# THIS FILE IS FOR PROVIDING HUMAN-LANGUAGE TRANSLATIONS FOR CLASSES, PROPERTIES
+# AND INSTANCES ONLY.
+
+# ┌──────────┐
+# │ RDF Core │
+# └──────────┘
+
+rdf:type rdfs:label "instance of"@en , "частный случай"@ru
+    ; rdfs:comment "класс, экземпляром которого является данный субъект"@ru
+    ; skos:altLabel "type"@en , "class"@en , "тип"@ru , "класс"@ru
+    .
+
+# ┌───────────────────────┐
+# │ Web Ontology Language │
+# └───────────────────────┘
+
+owl:sameAs rdfs:label "то же самое"@ru
+    ; rdfs:comment "элемент, описывающий тот же объект действительности, что и данный"@ru
+    ; skos:altLabel "идентичный элемент"@ru
+    .
+owl:differentFrom rdfs:label "не путать с"@ru
+    ; rdfs:comment "элемент, который отличается от данного, но который часто путают с ним"@ru
+    ; skos:altLabel "отличный от"@ru , "отличается"@ru
+    .
+
+# ┌──────┐
+# │ SKOS │
+# └──────┘
+
+skos:broader rdfs:label "более широкое понятие"@ru
+    ; rdfs:comment "понятие, которое включает данное"@ru
+    ; skos:altLabel "шире"@ru , "обобщающее понятие"@ru , "уточняет понятие"@ru
+    .
+skos:exactMatch rdfs:label "понятие точно соответствует"@ru
+    ; rdfs:comment "понятие, которое с высокой степенью достоверности может использоваться вместо данного"@ru
+    ; skos:altLabel "то же самое"@ru , "равно"@ru
+    .
+
+# ┌───────────────────────┐
+# │ Schema.org Vocabulary │
+# └───────────────────────┘
+
+schema:AdministrativeArea rdfs:label "administrative area"@en , "административная единица"@ru
+    ; rdfs:comment "единица территориального деления, находящая под юрисдикцией конкретного правительства"@ru
+    .
+schema:City rdfs:label "city"@en , "город"@ru , "кар"@udm
+    ; rdfs:comment "крупный населённый пункт"@ru
+    ; skos:altLabel "town"@en
+    .
+schema:CollegeOrUniversity rdfs:label "college or university"@en , "высшее учебное заведение"@ru
+    ; rdfs:comment
+        "учебное заведение, дающее высшее профессиональное образование и осуществляющее научную деятельность"@ru
+    ; skos:altLabel "университет"@ru
+    .
+schema:Corporation rdfs:label "corporation"@en , "коммерческая организация"@ru
+    ; rdfs:comment "организация, целью которой является получение прибыли"@ru
+    ; skos:altLabel "корпорация"@ru
+    .
+schema:Country rdfs:label "country"@en , "страна"@ru
+    ; rdfs:comment "геополитическая, культурная или историческая область"@ru
+    ; skos:altLabel "государство"@ru
+    .
+schema:EducationalOrganization rdfs:label "educational organization"@en , "образовательное учреждение"@ru
+    ; rdfs:comment "организация, которая предоставляет образовательные услуги"@ru
+    .
+schema:Event rdfs:label "event"@en , "событие"@ru
+    ; rdfs:comment "событие, произошедшее в определённое время и в определённом месте"@ru
+    .
+schema:Female rdfs:label "female"@en , "женщина"@ru
+    ; rdfs:comment "женский пол"@ru
+    ; skos:altLabel "woman"@en , "девушка"@ru , "девочка"@en
+    .
+schema:Male rdfs:label "male"@en , "мужчина"@ru
+    ; rdfs:comment "мужской пол"@ru
+    ; skos:altLabel "man"@en , "мужик"@ru , "мальчик"@ru , "парень"@ru
+    .
+schema:Person rdfs:label "person"@en , "человек"@ru
+    ; rdfs:comment "общественное существо"@ru
+    ; skos:altLabel "личность"@ru , "люди"@ru
+    .
+schema:Photograph rdfs:label "photograph"@en , "фотография"@ru
+    ; rdfs:comment "изображение, созданное падением света на светочуствительную поверхность"@ru
+    .
+schema:Place rdfs:label "place"@en , "место"@ru
+    .
+schema:Organization rdfs:label "organization"@en , "организация"@ru
+    ; rdfs:comment "коммерческая, некоммерческая, государственная и иная организация"@ru
+    ; skos:altLabel "общество"@ru
+    .
+schema:ResearchOrganization rdfs:label "research organization"@en , "научно-исследовательское учреждение"@ru
+    ; rdfs:comment "учреждение, осуществляющее исследовательскую деятельность"@ru
+    ; skos:altLabel "НИИ"@ru , "научно-исследовательский институт"@ru
+    .
+schema:address rdfs:label "address"@en , "адрес"@ru
+    ; rdfs:comment "полный почтовый адрес субъекта"@ru
+    .
+schema:alumniOf rdfs:label "alumni of"@en , "выпускник"@ru
+    ; rdfs:comment "учебное заведение, которое окончил субъект"@ru
+    .
+schema:birthPlace rdfs:label "birth place"@en , "место рождения"@ru
+    ; rdfs:comment "наиболее конкретное место, где человек родился"@ru
+    .
+schema:contentLocation rdfs:label "локация"@ru
+    ; rdfs:comment "место, которое изображено или описано в данном произведении"@ru
+    ; skos:altLabel "место"@ru
+    .
+schema:deathPlace rdfs:label "death place"@en , "место смерти"@ru
+    ; rdfs:comment "наиболее конкретное место, где человек умер"@ru
+    .
+schema:gender rdfs:label "gender"@en , "пол"@ru
+    ; rdfs:comment "биологический пол или гендерное самоопределение (напр., мужчина, женщина)"@ru
+    ; skos:altLabel "sex"@en , "гендер"@ru
+    .
+schema:genre rdfs:label "genre"@en , "жанр"@ru
+    ; rdfs:comment "жанр произведения"@en
+    .
+schema:geo rdfs:label "geographic coordinates"@en , "географические координаты"@ru
+    ; rdfs:comment "географические координаты данного субъекта, указанные с помощью Geohash"@ru
+    ; skos:altLabel "geohash"@en
+    .
+schema:givenName rdfs:label "given name"@en , "личное имя"@ru
+    ; rdfs:comment "имя, обычно различающее людей из одной семьи"@ru
+    ; skos:altLabel "first name"@en , "имя"@ru
+    .
+schema:familyName rdfs:label "family name"@en , "фамилия"@ru
+    ; rdfs:comment "часть имени, указывающая на принадлежность к некоторому роду, семье"@ru
+    ; skos:altLabel "surname"@en , "last name"@en
+    .
+schema:legalName rdfs:label "legal name"@en , "официальное название"@ru
+    ; rdfs:comment "официальное наименование организации, например, указанное в учредительных документах"@ru
+    ; skos:altLabel "фирменное наименование"@ru , "полное название"@ru , "юридическое лицо"@ru
+    .
+schema:parentOrganization rdfs:label "parent organization"@en , "подчиняется организации"@ru
+    ; rdfs:comment "организация, структурным подразделением которого является данный субъект"@ru
+    ; skos:altLabel "материнская организация"@ru , "родительская организация"@ru
+    .
+schema:recordedAt rdfs:label "recorded at"@en , "снято на событии"@ru
+    ; rdfs:comment "событие, где данная работа (фотография, аудиозапись и т.д.) была записана"@ru
+    ; skos:altLabel "событие"@ru
+    .
+schema:text rdfs:label "text"@en , "текст"@ru
+    ; rdfs:comment "текстовое содержание произведения"@ru
+    ; skos:altLabel "надпись"@ru , "подпись"@ru
+    .
+schema:uploadDate rdfs:label "upload date"@en , "дата загрузки"@ru .
+
+# ┌─────────────────────────┐
+# │ Organization Vocabulary │
+# └─────────────────────────┘
+
+org:Role rdfs:label "должность"@ru
+    ; rdfs:comment "должность (пост) в организации, который человек может занимать"@ru
+    ; skos:altLabel "пост"@ru , "позиция"@ru , "роль"@en
+    .
+
+org:hasMembership rdfs:label "занятость"@ru
+    ; rdfs:comment "место и период работы, должность человека"@ru
+    ; skos:altLabel "работает"@ru , "занимает пост"@ru , "занимаемый пост"@ru , "трудоустроен"@ru , "трудоустройство"@ru , "должность"@ru
+    .
+org:memberDuring rdfs:label "период занятости"@ru
+    ; rdfs:comment "период, в течениии которого субъект занимал некоторую должность"@ru
+    ; skos:altLabel "годы работы"@ru , "период работы"@ru
+    .
+org:organization rdfs:label "организация"@ru
+    ; rdfs:comment "организация, на которую работает субъект в указанный период занятости"@ru
+    ; skos:altLabel "компания"@ru , "работодатель"@ru
+    .
+org:role rdfs:label "должность"@ru
+    ; rdfs:comment "должность, которую занимает субъект в указанный период занятости"@ru
+    ; skos:altLabel "пост"@ru , "позиция"@ru , "роль"@en
+    .
